@@ -23,6 +23,8 @@ ingress-nginx:
       strict-validate-path-type: true # CVE-2022-4886
     extraArgs:
       enable-ssl-passthrough: true
+    metrics:
+      enabled: true
 
 certEmail: "user@example.com"
 
