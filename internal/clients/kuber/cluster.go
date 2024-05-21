@@ -21,6 +21,9 @@ func (client *Client) CreateCluster(
 		Annotations: map[string]string{
 			"enterprise.uffizzi.com/http-cluster-sleep": autoSleep,
 		},
+		Labels: map[string]string{
+			"uffizzi.com/account-id": clusterParams.AccountId,
+		},
 		Spec: v1alpha1.UffizziClusterSpec{
 			Sleep:     false,
 			Manifests: &clusterParams.Manifest,
