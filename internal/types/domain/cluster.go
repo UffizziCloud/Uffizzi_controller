@@ -25,6 +25,7 @@ type ClusterParams struct {
 	Image                string                  `json:"image"`
 	AutoSleep            bool                    `json:"auto_sleep,omitempty"`
 	NodeSelectorTemplate string                  `json:"node_selector_template,omitempty"`
+	AccountId            uint64                  `json:"account_id,omitempty"`
 }
 
 type PatchClusterParams struct {

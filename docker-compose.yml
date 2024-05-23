@@ -26,5 +26,5 @@ services:
 
 networks:
   default:
-    external:
-      name: uffizzi_default_network
+    external: true
+    name: uffizzi_default_network
