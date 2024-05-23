@@ -22,7 +22,7 @@ func (client *Client) CreateCluster(
 			"enterprise.uffizzi.com/http-cluster-sleep": autoSleep,
 		},
 		Labels: map[string]string{
-			"uffizzi.com/account-id": clusterParams.AccountId,
+			"uffizzi.com/account-id": strconv.FormatUint(clusterParams.AccountId, 10),
 		},
 		Spec: v1alpha1.UffizziClusterSpec{
 			Sleep:     false,
