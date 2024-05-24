@@ -2,10 +2,9 @@ module gitlab.com/dualbootpartners/idyl/uffizzi_controller
 
 go 1.20
 
-
 require (
 	github.com/GehirnInc/crypt v0.0.0-20200316065508-bb7000b8a962
-	github.com/UffizziCloud/uffizzi-cluster-operator v1.6.4
+	github.com/UffizziCloud/uffizzi-cluster-operator v1.6.5
 	github.com/a8m/envsubst v1.3.0
 	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751
 	github.com/araddon/dateparse v0.0.0-20210429162001-6b43995a97de
