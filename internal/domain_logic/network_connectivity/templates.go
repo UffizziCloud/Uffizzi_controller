@@ -19,6 +19,7 @@ type ConnectivityContainerStatus struct {
 	DomainName string             `json:"domain_name,omitempty"`
 	Port       int                `json:"port"`
 	Status     ConnectivityStatus `json:"status"`
+	Version    string             `json:"version"`
 }
 
 type ConnectivityContainer struct {
@@ -63,6 +64,7 @@ func NewNetworkConnectivityTemplate(containerList domainTypes.ContainerList) (*C
 				DomainName: domainName,
 				Port:       containerPort,
 				Status:     StatusPending,
+				Version:    container.Version,
 			},
 		}
 
@@ -76,8 +78,9 @@ func (response *ConnectivityResponse) AddIngressContainer(container *domainTypes
 	containerID := fmt.Sprint(container.ID)
 	networkConnectivityContainer := response.Containers[containerID]
 	networkConnectivityContainer.Ingress = &ConnectivityContainerStatus{
-		Port:   global.Settings.IngressDefaultPort,
-		Status: StatusPending,
+		Port:    global.Settings.IngressDefaultPort,
+		Status:  StatusPending,
+		Version: container.Version,
 	}
 
 	response.Containers[containerID] = networkConnectivityContainer
